@@ -14,24 +14,23 @@ class Shop:
     def get_products(self):
         file = open(self.__file_name, 'r', encoding='utf-8')
         data = file.read()
-        print(data)
+        return (data)
         file.close()
-        #print(f'{data}')
 
     def add(self, *products):
         file = open(self.__file_name, 'a', encoding='utf-8')
         file.write('')  # Создание файла при первом запуске и добавление "ничего" при последующих
         file.close()
         for i in products:
-            s = (str(i))
+            name_produkt = (str(i))
             file = open(self.__file_name, 'r', encoding='utf-8')
-            f = file.read()
+            prod_list = file.read()
             file.close()
-            if s in f:
-                print(f'Продукт {s} уже есть в магазине')
+            if name_produkt in prod_list:
+                print(f'Продукт {name_produkt} уже есть в магазине')
             else:
                 file = open(self.__file_name, 'a', encoding='utf-8')
-                file.write(f'\n{s}')
+                file.write(f'{name_produkt}\n')
                 file.close()
 
 
