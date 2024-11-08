@@ -13,7 +13,7 @@ class Shop:
 
     def get_products(self):
         file = open(self.__file_name, 'r', encoding='utf-8')
-        data = file.read()        
+        data = file.read()
         file.close()
         return data
 
@@ -23,10 +23,7 @@ class Shop:
         file.close()
         for i in products:
             name_produkt = (str(i))
-            file = open(self.__file_name, 'r', encoding='utf-8')
-            prod_list = file.read()
-            file.close()
-            if name_produkt in prod_list:
+            if name_produkt in self.get_products():
                 print(f'Продукт {name_produkt} уже есть в магазине')
             else:
                 file = open(self.__file_name, 'a', encoding='utf-8')
