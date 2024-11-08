@@ -13,9 +13,9 @@ class Shop:
 
     def get_products(self):
         file = open(self.__file_name, 'r', encoding='utf-8')
-        data = file.read()
-        return (data)
+        data = file.read()        
         file.close()
+        return data
 
     def add(self, *products):
         file = open(self.__file_name, 'a', encoding='utf-8')
