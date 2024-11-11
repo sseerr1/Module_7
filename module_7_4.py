@@ -6,7 +6,7 @@ team1_time = 1552.512
 team2_time = 2153.31451
 tasks_total = score_1 + score_2
 time_avg = 45.2
-challenge_result = 'Победа команды Волшебники данных!'
+challenge_result = 'Победа команды Волшебники данных'
 
 # Использование %:
 print('В команде "Мастера кода" участников: %s ! ' % team1_num)
