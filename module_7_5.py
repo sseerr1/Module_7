@@ -1,5 +1,6 @@
 import os
 import time
+
 main_path = os.getcwd()
 for root, dirs, files in os.walk('.'):
     root = root[2:]
