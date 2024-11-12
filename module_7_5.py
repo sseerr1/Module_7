@@ -7,7 +7,7 @@ for root, dirs, files in os.walk('.'):
         if os.path.isfile(file):
             filepath = os.path.join(main_path, root, file)
             filetime = os.path.getmtime(file)
-            formatted_time = time.ctime(filetime)
+            formatted_time = time.strftime("%d.%m.%Y %H:%M", time.localtime(filetime))
             filesize = os.stat(file).st_size
             parent_dir = os.path.dirname(filepath)
             print(f'Обнаружен файл: {file}, Путь: {filepath}, Размер: {filesize} байт,'
