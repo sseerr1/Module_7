@@ -8,9 +8,9 @@ class WordsFinder:
         for file_name in self.file_names:
             with open(file_name, encoding='utf-8') as file:
                 content = file.read().lower()
-                words = content.replace('.', ' ').replace(',', ' ') \
-                    .replace('=', ' ').replace('!', ' ').replace('?', ' '). \
-                    replace(';', ' ').replace(':', ' ').replace(' - ', ' ').split()
+                for p in punctuation_:
+                    content = content.replace(p, ' ')
+                words = content.split()
         all_words.update({self.file_names: words})
         return all_words
 
